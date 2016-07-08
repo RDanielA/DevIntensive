@@ -8,10 +8,10 @@
                 android:paddingBottom="@dimen/spacing_small_8"
                 android:background="@drawable/material_bg">
     <ImageView
+        android:id="@+id/drawer_avatar"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:scaleType="centerCrop"
-
         android:src="@drawable/min_prof"
         android:layout_marginTop="@dimen/spacing_normal_16"/>
 
@@ -27,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Рыбалко Даниил"
+            android:textColor="@color/black"
             android:textSize="14sp"
             android:fontFamily="sans-serif-medium"/>
 
@@ -36,6 +37,7 @@
             android:layout_height="wrap_content"
             android:text="mymail@mymail.ru"
             android:textSize="14sp"
+            android:textColor="@color/black"
             android:fontFamily="sans-serif"/>
 
     </LinearLayout>

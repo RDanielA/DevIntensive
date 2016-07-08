@@ -73,7 +73,7 @@
                     style="@style/AppTheme.PopupOverlay"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:titleTextColor="@color/white_smoke"
+                    android:titleTextColor="@color/grey_background"
                     app:layout_collapseMode="pin">
 
                 </android.support.v7.widget.Toolbar>

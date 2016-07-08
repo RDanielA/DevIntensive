@@ -38,6 +38,7 @@ import android.widget.RelativeLayout;
 import com.softdesign.devintensive.R;
 import com.softdesign.devintensive.data.managers.DataManager;
 import com.softdesign.devintensive.util.ConstantManager;
+import com.softdesign.devintensive.util.RoundedTransformation;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -66,6 +67,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     private File mPhotoFile=null;
     private Uri mSelectedImage=null;
     private ImageView mProfileImage;
+    private ImageView mDrawerAvatar;
+    private View mDrawerView;
 
     private EditText mUserPhone,mUserEmail,mUserVk,mUserGit,mUserSelf;
     private List<View> mUserInfo;
@@ -84,6 +87,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         mCollapsingToolbarLayout = (CollapsingToolbarLayout)findViewById(R.id.collapsing_toolbar);
         mAppBarLayout = (AppBarLayout)findViewById(R.id.appbar_layout);
         mProfileImage = (ImageView)findViewById(R.id.user_photo_img);
+//        mDrawerAvatar = (ImageView)mDrawerView.findViewById(R.id.drawer_avatar);
 
         mFab = (FloatingActionButton)findViewById(R.id.fab);
         mUserPhone = (EditText)findViewById(R.id.phone_et);
@@ -104,10 +108,17 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         setupToolbar();
         setupDrawer();
         loadUserInfoValue();
+
         Picasso.with(this)
                 .load(mDataManager.getPreferenceManager().LoadUserPhoto())
                 .placeholder(R.drawable.profile)
                 .into(mProfileImage);
+
+//        Picasso.with(this)
+//                .load(mDataManager.getPreferenceManager().LoadUserPhoto())
+//                .transform(new RoundedTransformation(50,4))
+//                .into(mDrawerAvatar);
+
 
         mFab.setOnClickListener(this);
         mProfilePlaceholder.setOnClickListener(this);
@@ -257,7 +268,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
                 hideProfilePlaceholder();
                 unlockToolbar();
-                mCollapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(R.color.white));
+                mCollapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(R.color.grey_background));
 
                 saveUserInfoValue();
             }
@@ -430,6 +441,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         Picasso.with(this)
                 .load(selectedImage)
                 .into(mProfileImage);
+
+//        Picasso.with(this)
+//                .load(mDataManager.getPreferenceManager().LoadUserPhoto())
+//                .transform(new RoundedTransformation(50,4))
+//                .into(mDrawerAvatar);
 
         mDataManager.getPreferenceManager().SaverProfilePhoto(selectedImage);
     }

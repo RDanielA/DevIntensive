@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">DevIntensive</string>
+    <string name="app_name">Даниил Рыбалко</string>
+    <string name="user_profile.placeholder.image">Изменить фотографию профиля</string>
+    <string name="user_profile.dialog.gallery">Загрузить из галлереи</string>
+    <string name="user_profile.dialog.camera">Сделать снимок</string>
+    <string name="user_profile.dialog.cancel">Отмена</string>
+    <string name="user_profile.dialog.title">Изменить фотографию профиля</string>
+    <string name="user_profile.chose.message">Выберите фото</string>
 </resources>
